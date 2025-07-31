@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        char c = sc.next().charAt(0);
+        
+        int aasci = (int)c;
+        
+        if((aasci>=65 && aasci<=90) || (aasci>=97 && aasci<=122)){
+            System.out.println("ALPHABET");
+        }
+        else if(aasci>=48 && aasci<=57){
+            System.out.println("NUMBER");
+        }
+        else{
+            System.out.println("SPECIAL CHARACTER");
+        }
+    }
+}
