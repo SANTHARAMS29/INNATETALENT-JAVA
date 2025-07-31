@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int amount = sc.nextInt();
+        
+        int[] denominations = {500, 100, 50, 20, 10, 5, 2, 1};
+        int[] noteCount = new int[denominations.length];
+
+        for (int i = 0; i < denominations.length; i++) {
+            noteCount[i] = amount / denominations[i];
+            amount %= denominations[i];
+        }
+
+        System.out.println("Total number of notes:");
+        for (int i = 0; i < denominations.length; i++) {
+            System.out.println(denominations[i] + " : " + noteCount[i]);
+        }
+        
+    }
+}
