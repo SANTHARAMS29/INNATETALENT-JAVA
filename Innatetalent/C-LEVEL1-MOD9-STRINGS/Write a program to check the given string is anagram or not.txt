@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        String s1 = sc.next();
+        String s2 = sc.next();
+        
+        String temp1=s1.toLowerCase();
+        String temp2 = s2.toLowerCase();
+        
+        char arr[] = new char[26];
+        
+        for(char c:temp1.toCharArray()){
+            
+            arr[c-'a']++;
+        }
+        
+        for(char c:temp2.toCharArray()){
+            arr[c-'a']--;
+        }
+        
+        boolean temp = false;
+        
+        for(int i=0;i<26;i++){
+            if(arr[i]!=0){
+                temp = true;
+                break;
+            }
+        }
+        
+        if(temp) System.out.println(s1 + " and " +s2 +" are Not Anagrams.");
+        else if(temp==false) System.out.println(s1+" and "+s2 +" are Anagrams.");
+    }
+}
