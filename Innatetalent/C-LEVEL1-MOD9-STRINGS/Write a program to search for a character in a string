@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        char data = sc.next().charAt(0);
+        sc.nextLine();
+        String str = sc.nextLine();
+        
+        boolean temp = false;
+        
+        for(char c:str.toCharArray()){
+            
+            if(c==data){
+                //System.out.println("Present");
+                temp = true;
+                break;
+            }
+        }
+        
+        if(temp==false){
+            System.out.println("Not Present");
+        }
+        else System.out.println("Present");
+        
+    }
+}
